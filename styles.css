@@ -1,0 +1,16 @@
+body {
+    width: 90vw;
+    margin: 0 auto;
+    background: radial-gradient(#343e63, #2a3352);
+}
+
+main {
+    text-align: center;
+    background: #f8f1e9;
+    border: solid #ef7b54;
+    border-width: 0 8px 8px 8px;
+    min-height: 80vh;
+    border-radius: 0 0 3rem 3rem;
+    padding: 1rem;
+    color: #1f2933;
+}
