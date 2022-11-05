@@ -1,3 +1,7 @@
+:root {
+    --green: #83e1d0
+}
+
 body {
     width: 90vw;
     margin: 0 auto;
@@ -34,5 +38,9 @@ button {
     cursor: pointer;
     background: #83e1d0;
     padding: 2rem;
-    border-radius: 1rem 1rem 0;
+    border-radius: 1rem 1rem 0 0;
 }
+
+/* button:last-child {
+    background: ;
+} */
