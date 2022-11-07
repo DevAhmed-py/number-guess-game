@@ -42,7 +42,7 @@ function compareGuess() {
             document.getElementById("inputBox").value = ""
     
         } else {
-            document.getElementById("textOutput").innerHTML = `Correct! You got it at ${attempts} attempts`
+            document.getElementById("textOutput").innerHTML = `Correct Guess! You got it at ${attempts} attempts`
         }
     } else {
         if (userGuess > computerGuess) {
