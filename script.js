@@ -53,6 +53,6 @@ function compareGuess() {
     
         } else {
             document.getElementById("textOutput").innerHTML = `Correct! You got it at ${attempts} attempts`
-        }
-    }
+        };
+    };
 };
