@@ -4,6 +4,7 @@ let attempts = 0;
 let maxGuesses;
 let low = 1;
 let high = 100;
+
 function init() {
     computerGuess = Math.floor(Math.random() * 100 + 1)
     console.log(computerGuess)
@@ -17,6 +18,12 @@ function startGame() {
 };
 
 function updateRange() {
+    const rangeOutput = document.getElementById("rangeOutput")
+    rangeOutput.innerText = `${low} - ${high}`
+    rangeOutput.style.marginLeft = low + '%'
+    rangeOutput.style.marginRight = 100 - high + '%'
+    rangeOutput.classList.add("flash")
+
     const lowValue = document.getElementById("low")
     lowValue.style.flex = low + '%'
     lowValue.style.background = '#ef7b54'
@@ -44,19 +51,20 @@ function compareGuess() {
     const userGuess = Number(document.getElementById("inputBox").value)
     guesses.push(" " + userGuess)
     document.getElementById("previousGuesses").innerHTML = guesses
+    
     attempts ++
     document.getElementById("attempts").innerHTML = attempts
 
     if (attempts < maxGuesses) {
         if (userGuess > computerGuess) {
 
-            high = userGuess
+            if (userGuess < high) {high = userGuess}
             document.getElementById("textOutput").innerHTML = "Your guess is too high"
             document.getElementById("inputBox").value = ""
     
         } else if (userGuess < computerGuess) {
 
-            low = userGuess
+            if (userGuess > low) {low = userGuess}
             document.getElementById("textOutput").innerHTML = "Your guess is too low"
             document.getElementById("inputBox").value = ""
     
@@ -64,6 +72,7 @@ function compareGuess() {
             document.getElementById("textOutput").innerHTML = `Correct Guess! You got it at ${attempts} attempts`
         gameEnded()
         }
+
     } else {
         if (userGuess > computerGuess) {
             document.getElementById("textOutput").innerHTML = `YOU LOSE!, <br> The number is ${computerGuess}`
